@@ -6,14 +6,14 @@ Basically, the example that I did on the `index.html` file has been written in t
 
 ### Step 1 - Take the input and declare the function
 
-```
+```javascript
 //Original input
 const a = [2, 6, 1, 4, 8, 3, 13, 123, 34, 1234, 11, 10];
 ```
 
 As we will implement this algorithm showing the worst and better way, we don't want to mutate the original value, so we'll clone the original input and store it on two variables, which I called `firstWay` and `betterWay`:
 
-```
+```javascript
 function bubbleSort() {
   const firstWay = [...a];
   const betterWay = [...a];
@@ -24,7 +24,7 @@ function bubbleSort() {
 
 By using two `for` operations, we'll be able to go through the all values of the array, for each value of the current loop. For example, when `i = 0` we can compare all the values from the right without losing the index. So I wrote it in the following way:
 
-```
+```javascript
   for (let i = 0; i < firstWay.length - 1; i++) {
     for (let j = 0; j < firstWay.length - 1; j++) {
       if (firstWay[j] > firstWay[j + 1]) {
@@ -40,7 +40,7 @@ I won't explain the `swap` function, as it's so simple and can be done in many d
 
 If you went to take a look at the beginning of the `bubbleSort` function, you might notice that I've declared a variable called `isSorted`. I've declared this variable to use it as a break condition on our `while` loop, because sometimes, depending on our input, the array is already sorted without needs of going to the end of the loop operation. For example, if we receive an input which the value is equal to `[1, 3, 2, 4]` we'll just need to do the **swap** one time. So I've implemented it in the following way:
 
-```
+```javascript
   //(...)
   let isSorted;
 
@@ -62,7 +62,7 @@ So when the for loop ends without any **swap**, we can just stop the loop 👍
 
 One tip is to declare a variable called `lastSorted` which will receive the length of the original input and each end of a loop, we can decrease the value of it. So we can change the `for` condition to something like this: 
 
-```
+```javascript
   let lastSorted = betterWay.length - 1;
   while (!isSorted) {
     isSorted = true;
