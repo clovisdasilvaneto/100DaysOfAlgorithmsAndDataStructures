@@ -3,7 +3,7 @@ This repository has been created in order to share knowledge, improve and keep m
 
 ### Algorithms
 
-- [https://github.com/clovisdasilvaneto/100DaysOfAlgorithmsAndDataStructures/tree/master/algorithms/bubble-sort](Bubble Sort)
+- [Bubble Sort](https://github.com/clovisdasilvaneto/100DaysOfAlgorithmsAndDataStructures/tree/master/algorithms/bubble-sort)
 
 ### Data Structure
 
