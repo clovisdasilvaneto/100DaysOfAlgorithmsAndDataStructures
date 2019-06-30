@@ -56,7 +56,7 @@ If you went to take a look at the beginning of the `bubbleSort` function, you mi
   }
 ```
 
-So when the for loop ends without any **swap**, we can just stop the loop :+1
+So when the for loop ends without any **swap**, we can just stop the loop 👍
 
 ### Step 2.b.2 - Declare a last sorted variable, to avoid that the loop enters on positions which were already sorted
 
@@ -80,4 +80,4 @@ One tip is to declare a variable called `lastSorted` which will receive the leng
 
 In my case, I just used a document.querySelector.innerHTML (as I used a `<b>` tag there) to update the DOM.
 
-PS: If you took a look on the entire code, probably you noticed that I used `performance.now()` to measure the time that my algorithm takes, it's a best practice when you're debugging your code and implementing some algorithm or some other thing. :+1
+PS: If you took a look on the entire code, probably you noticed that I used `performance.now()` to measure the time that my algorithm takes, it's a best practice when you're debugging your code and implementing some algorithm or some other thing. 👍
