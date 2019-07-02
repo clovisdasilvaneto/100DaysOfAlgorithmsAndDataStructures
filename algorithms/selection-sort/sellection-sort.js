@@ -31,7 +31,7 @@ function sellectionSort() {
       }
     }
 
-    if (sort[smallest] != smallest[i]) {
+    if (sort[smallest] != sort[i]) {
       swap(sort, smallest, i);
     }
   }
