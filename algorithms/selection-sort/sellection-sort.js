@@ -20,7 +20,6 @@ function sellectionSort() {
   //just to not mutate `a`
   const sort = [...a];
 
-  //first way (without break condition)
   const sortStartTime = performance.now();
   for (let i = 0; i < sort.length - 1; i++) {
     let smallest = i;
