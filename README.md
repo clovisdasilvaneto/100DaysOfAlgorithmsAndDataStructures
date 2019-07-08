@@ -7,6 +7,7 @@ This repository has been created in order to share knowledge, improve and keep m
 - [Insertion Sort](./algorithms/insertion-sort)
 - [Selection Sort](./algorithms/selection-sort)
 - [Heap Sort](./algorithms/heap-sort)
+- [Quick Sort](./algorithms/quick-sort)
 
 ### Data Structure
 
