@@ -27,9 +27,9 @@ function mergeSort(arr) {
     const rightSize = right.length;
 
     for (let i = 0; i < leftSize + rightSize; i++) {
-      if (!right[0]) {
+      if (right[0] === undefined) {
         sorted.push(left.shift());
-      } else if (!left[0]) {
+      } else if (left[0] === undefined) {
         sorted.push(right.shift());
       } else if (left[0] <= right[0]) {
         sorted.push(left.shift());
