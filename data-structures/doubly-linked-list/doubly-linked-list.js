@@ -54,9 +54,9 @@ class DoublyLinkedList {
   }
 }
 
-const MyList = new DoublyLinkedList();
-MyList.append("teste");
-MyList.append("mais um");
-MyList.prepend("Head");
-MyList.remove("teste");
-console.log(MyList.head);
+const list = new DoublyLinkedList();
+list.append("teste");
+list.append("mais um");
+list.prepend("Head");
+list.remove("teste");
+console.log(list.head);
