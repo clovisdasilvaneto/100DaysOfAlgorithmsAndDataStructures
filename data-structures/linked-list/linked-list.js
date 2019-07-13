@@ -45,9 +45,9 @@ class LinkedList {
   }
 }
 
-const MyList = new LinkedList();
-MyList.append("teste");
-MyList.append("mais um");
-MyList.prepend("Head");
-MyList.remove("Head");
-console.log(MyList.head);
+const list = new LinkedList();
+list.append("teste");
+list.append("mais um");
+list.prepend("Head");
+list.remove("Head");
+console.log(list.head);
