@@ -45,9 +45,11 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList();
-list.append("teste");
-list.append("mais um");
-list.prepend("Head");
-list.remove("Head");
-console.log(list.head);
+module.exports = LinkedList;
+
+// const list = new LinkedList();
+// list.append("teste");
+// list.append("mais um");
+// list.prepend("Head");
+// list.remove("Head");
+// console.log(list.head);
