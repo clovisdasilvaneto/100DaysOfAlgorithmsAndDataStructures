@@ -22,6 +22,18 @@ class Tree {
       this.right = value;
     }
   }
+
+  contains(value) {
+    if (value === this.data) {
+      return true;
+    } else if (value < this.data && this.left) {
+      return this.left.contains(value);
+    } else if (value > this.data && this.right) {
+      return this.right.contains(value);
+    }
+
+    return false;
+  }
 }
 
 const binaryTree = new Tree(10);
@@ -29,3 +41,4 @@ binaryTree.insert(7);
 binaryTree.insert(11);
 binaryTree.insert(2);
 binaryTree.insert(8);
+console.log(binaryTree.contains(11));
