@@ -34,6 +34,36 @@ class Tree {
 
     return false;
   }
+
+  inOrder() {
+    if (this.left) {
+      this.left.inOrder();
+    }
+    console.log(this.data);
+    if (this.right) {
+      this.right.inOrder();
+    }
+  }
+
+  preOrder() {
+    console.log(this.data);
+    if (this.left) {
+      this.left.inOrder();
+    }
+    if (this.right) {
+      this.right.inOrder();
+    }
+  }
+
+  postOrder() {
+    if (this.left) {
+      this.left.inOrder();
+    }
+    if (this.right) {
+      this.right.inOrder();
+    }
+    console.log(this.data);
+  }
 }
 
 const binaryTree = new Tree(10);
@@ -41,4 +71,6 @@ binaryTree.insert(7);
 binaryTree.insert(11);
 binaryTree.insert(2);
 binaryTree.insert(8);
-console.log(binaryTree.contains(11));
+// binaryTree.inOrder();
+// binaryTree.postOrder();
+binaryTree.preOrder();
