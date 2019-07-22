@@ -23,6 +23,43 @@ class Tree {
     }
   }
 
+  findLastLeftNode(node) {
+    if (node.left.left) {
+      return this.findLastLeftChild(node.left);
+    }
+
+    return node;
+  }
+
+  remove(value, parentNode) {
+    if (this.data === value) {
+      if (!parentNode) {
+        this.data = null;
+      } else if (!this.right && !this.left) {
+        if (parentNode.left.data === value) {
+          parentNode.left = null;
+        } else {
+          parentNode.right = null;
+        }
+      } else if (!this.right) {
+        this.data = this.left.data;
+        this.left = this.left.left;
+      } else if (this.right.left) {
+        const lastLeftNode = this.findLastLeftNode(this.right);
+
+        this.data = lastLeftNode.left;
+        lastLeftNode.left = lastLeftNode.left.right;
+      } else {
+        this.data = this.right.data;
+        this.right = this.right.right;
+      }
+    } else if (value < this.data) {
+      this.left.remove(value, this);
+    } else {
+      this.right.remove(value, this);
+    }
+  }
+
   contains(value) {
     if (value === this.data) {
       return true;
@@ -66,11 +103,20 @@ class Tree {
   }
 }
 
-const binaryTree = new Tree(10);
+const binaryTree = new Tree(20);
 binaryTree.insert(7);
-binaryTree.insert(11);
+binaryTree.insert(30);
+binaryTree.insert(24);
+binaryTree.insert(21);
+binaryTree.insert(25);
+binaryTree.insert(22);
 binaryTree.insert(2);
 binaryTree.insert(8);
 // binaryTree.inOrder();
 // binaryTree.postOrder();
-binaryTree.preOrder();
+// binaryTree.preOrder();
+binaryTree.remove(7);
+// binaryTree.remove(24);
+binaryTree.remove(30);
+binaryTree.remove(2);
+binaryTree.inOrder();
