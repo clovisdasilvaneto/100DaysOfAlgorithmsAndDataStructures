@@ -21,6 +21,7 @@ This repository has been created in order to share knowledge, improve and keep m
   - [Queue](./data-structures/queue)
   - [Stack](./data-structures/stack)
   - [Hash Table](./data-structures/hash-table)
+  - [Binary Trees](./data-structures/binary-tree)
 
 **__PS: If you wan't to start in your 100 days of algorithms and data structure challenge, please fork this repository and don't forget to use the #100DaysOfAlgorithmsAndDataStructure hashtag to share your status 
 \o/__**
