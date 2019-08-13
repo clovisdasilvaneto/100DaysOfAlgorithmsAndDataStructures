@@ -10,3 +10,5 @@ a.reduce((acc, val, index) => {
 ```
 
 But it is **O(N)2 - Quadratic** in terms of **space**. So I decided to came up with a **O(N)** solution in terms of space and time complexty 👍
+
+***PS: The number of elements in the array will allweys be odd***
