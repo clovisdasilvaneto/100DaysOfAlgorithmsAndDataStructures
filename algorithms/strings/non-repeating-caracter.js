@@ -22,8 +22,7 @@ const b = "aazycc";
 const c = "aabb";
 
 //If there's more than one non_repeatable, you should
-//show only the first one 👍
-
+//show only the first one
 console.log("a: ", findSingleCaracter(a));
 console.log("b: ", findSingleCaracter(b));
 console.log("c: ", findSingleCaracter(c));
