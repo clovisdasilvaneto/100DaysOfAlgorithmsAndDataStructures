@@ -1,0 +1,27 @@
+{
+  "name": "nevinhithms",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": {
+    "email": "clovisdasilvaneto@gmail.com",
+    "name": "Clóvis Neto",
+    "url": "http://github.com/clovisdasilvaneto"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.dev.js",
+    "dev": "webpack --watch --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "performance-now": "^2.1.0"
+  }
+}
