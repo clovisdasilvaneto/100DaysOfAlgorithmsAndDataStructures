@@ -1,55 +1,118 @@
-const Node = require("../Node");
+const LinkedList = () => {
+  let head;
+  let tail;
 
-class LinkedList {
-  append(data) {
-    if (!this.head) {
-      return (this.head = new Node(data));
+  const createNode = (value) => {
+    return {
+      value,
+      next: {},
+    };
+  };
+
+  const initializeList = (node) => {
+    head = node;
+    tail = head;
+  };
+
+  const addNode = (value) => {
+    const node = createNode(value);
+
+    if (!head) {
+      initializeList(node);
+      return;
     }
 
-    let current = this.head;
+    tail.next = node;
+    tail = tail.next;
+  };
 
-    while (current.next) {
-      current = current.next;
+  const prependNode = (value) => {
+    const node = createNode(value);
+
+    if (!head) {
+      initializeList(node);
+      return;
     }
 
-    current.next = new Node(data);
-  }
+    node.next = head;
+    head = node;
+  };
 
-  prepend(data) {
-    if (!this.head) {
-      return (this.head = new Node(data));
-    }
+  const search = (value) => {
+    let current = head || {};
+    let result;
 
-    let newHead = new Node(data);
-    newHead.next = this.head;
-
-    this.head = newHead;
-  }
-
-  remove(data) {
-    if (!this.head) return;
-
-    if (this.head.data === data) {
-      return (this.head = this.head.next);
-    }
-
-    let current = this.head;
-
-    while (current.next) {
-      if (current.next.data === data) {
-        current.next = current.next.next;
-        break;
+    while (!result && current) {
+      if (current.value === value) {
+        result = value;
       }
+
       current = current.next;
     }
-  }
-}
 
-module.exports = LinkedList;
+    return result;
+  };
 
-// const list = new LinkedList();
-// list.append("teste");
-// list.append("mais um");
-// list.prepend("Head");
-// list.remove("Head");
-// console.log(list.head);
+  const traverse = (cb) => {
+    let current = head || {};
+
+    while (current.value) {
+      if (cb) cb(current);
+
+      current = current.next;
+    }
+  };
+
+  const reverseTraversal = () => {
+    if (!tail) return;
+
+    let current = tail.value;
+
+    while (current !== head.value) {
+      let prev = head;
+
+      while (prev.next.value !== current) {
+        prev = prev.next;
+      }
+
+      current = prev.value;
+    }
+  };
+
+  const getList = () => {
+    return { head, tail };
+  };
+
+  return {
+    search,
+    getList,
+    addNode,
+    prependNode,
+    traverse,
+    reverseTraversal,
+  };
+};
+
+const list = LinkedList();
+
+list.addNode(1);
+list.addNode(2);
+
+console.log(list.getList());
+
+console.log("---------- PREPEND ---------");
+
+list.prependNode(3);
+
+list.traverse((item) => {
+  console.log("the traversed node is", item);
+});
+console.log(list.search(2));
+
+console.log("list:", list.getList());
+console.log(
+  "is the same tail? ",
+  list.getList().head.next.next.value === list.getList().tail.value
+);
+
+list.reverseTraversal();
